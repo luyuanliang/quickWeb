@@ -31,9 +31,9 @@ public class StringHelper {
 			String[] array = str.split(seperate);
 			for (int i = 0; i < array.length; i++) {
 				if (StringUtils.isNotBlank(array[i]) && StringUtils.isNotBlank(array[i].trim())) {
-					if ("java.lang.Long".equals(clazz.getClass())) {
+					if ("java.lang.Long".equals(clazz.getClass().toString())) {
 						list.add(Long.valueOf(array[i].trim()));
-					} else if ("java.lang.Integer".equals(clazz.getClass())) {
+					} else if ("java.lang.Integer".equals(clazz.getClass().toString())) {
 						list.add(Integer.valueOf(array[i].trim()));
 					} else {
 						list.add(array[i].trim());

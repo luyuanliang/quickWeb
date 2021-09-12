@@ -1,11 +1,10 @@
 package org.web.example.springcloud.query;
 
-import java.util.Date;
-import java.util.List;
-import java.util.ArrayList;
 import lombok.Getter;
 import lombok.Setter;
-import org.web.domain.QueryBase;
+import org.web.basemodel.QueryBase;
+
+import java.util.List;
 
 @Setter
 @Getter

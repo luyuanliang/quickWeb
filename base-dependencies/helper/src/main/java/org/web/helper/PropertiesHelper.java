@@ -72,7 +72,7 @@ public class PropertiesHelper {
      * 读取指定路径下的资源文件
      *
      * @param bundleName properties文件路径
-     * @param key
+     * @param key        配置文件中的KEY
      * @return value
      */
     public static String getString(String bundleName, String key) throws MissingResourceException {
@@ -81,7 +81,7 @@ public class PropertiesHelper {
 
 
     public static ResourceBundle getResourceBundle(String bundleName, String baseName) throws MissingResourceException {
-        Locale locale = null;
+        Locale locale;
         if (StringUtils.isEmpty(baseName)) {
             locale = Locale.getDefault();
         } else {
