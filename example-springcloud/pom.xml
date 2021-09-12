@@ -28,8 +28,8 @@
 
         <dependency>
             <groupId>org.web.base</groupId>
-            <artifactId>helper</artifactId>
-            <version>${baseModel-version}</version>
+            <artifactId>base-model</artifactId>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>
@@ -84,12 +84,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <dependency>
-            <groupId>org.web.base</groupId>
-            <artifactId>base-model</artifactId>
-            <scope>compile</scope>
-        </dependency>
-
 
     </dependencies>
 

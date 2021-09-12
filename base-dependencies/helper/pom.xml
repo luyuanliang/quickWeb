@@ -9,7 +9,6 @@
     </parent>
     <artifactId>helper</artifactId>
     <packaging>jar</packaging>
-
     <name>helper</name>
     <description>my owner tools</description>
 

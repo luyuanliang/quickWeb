@@ -9,7 +9,6 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>base-model</artifactId>
-    <version>1.0.0</version>
     <name>base-model</name>
     <description>Demo project for Spring Boot</description>
 

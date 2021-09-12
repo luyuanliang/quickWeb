@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
-        <version>2.4.4</version>
+        <version>2.5.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.web.base</groupId>
@@ -19,8 +19,7 @@
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <help-module-version>1.0.0</help-module-version>
-        <baseModel-version>1.0.0</baseModel-version>
+        <base-dependencies-version>1.0.0</base-dependencies-version>
     </properties>
 	
 	<modules>
@@ -31,14 +30,14 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.web</groupId>
-                <artifactId>helper</artifactId>
-                <version>${help-module-version}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.web.base</groupId>
                 <artifactId>base-model</artifactId>
-                <version>${baseModel-version}</version>
+                <version>${base-dependencies-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.web</groupId>
+                <artifactId>helper</artifactId>
+                <version>${base-dependencies-version}</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
             <dependency>
