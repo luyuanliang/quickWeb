@@ -14,18 +14,19 @@
     <packaging>pom</packaging>
 
     <name>base-dependencies</name>
-    <description>manager service dependencies </description>
+    <description>manager service dependencies</description>
 
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <base-dependencies-version>1.0.0</base-dependencies-version>
+        <mybatis-spring-boot-version>2.1.3</mybatis-spring-boot-version>
     </properties>
-	
-	<modules>
-		<module>baseModel</module>
+
+    <modules>
+        <module>baseModel</module>
         <module>helper</module>
-	</modules>
+    </modules>
 
     <dependencyManagement>
         <dependencies>
