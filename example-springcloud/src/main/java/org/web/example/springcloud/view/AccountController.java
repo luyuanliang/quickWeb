@@ -3,14 +3,11 @@ package org.web.example.springcloud.view;
 
 import com.google.gson.Gson;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.web.basemodel.ResultDO;
-import org.web.basemodel.view.ViewResult;
+import org.web.base.domain.view.ViewResult;
 import org.web.example.springcloud.domain.AccountDO;
-import org.web.example.springcloud.domain.StudentDO;
 import org.web.example.springcloud.query.QueryAccount;
 import org.web.example.springcloud.service.AccountService;
 

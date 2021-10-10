@@ -2,7 +2,7 @@ package org.web.example.springcloud.query;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.web.basemodel.QueryBase;
+import org.web.base.domain.QueryBase;
 
 import java.util.List;
 

@@ -1,10 +1,10 @@
 package org.web.helper;
 
 import org.apache.commons.lang3.StringUtils;
-import org.web.basemodel.ResultDO;
-import org.web.basemodel.exceptionservice.ServiceException;
-import org.web.basemodel.exceptionservice.ResultMessageEnum;
-import org.web.basemodel.view.ViewResult;
+import org.web.base.domain.ResultDO;
+import org.web.base.domain.exceptionservice.ServiceException;
+import org.web.base.domain.exceptionservice.ResultMessageEnum;
+import org.web.base.domain.view.ViewResult;
 
 /**
  * 类ServiceExceptionHelper.java的实现描述：

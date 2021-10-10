@@ -1,4 +1,4 @@
-package org.web.basemodel.exceptionservice;
+package org.web.base.domain.exceptionservice;
 
 
 public enum ResultMessageEnum {

@@ -1,4 +1,4 @@
-package org.web.basemodel;
+package org.web.base.domain;
 
 import lombok.Getter;
 import lombok.Setter;
