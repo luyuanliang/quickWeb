@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
-import org.web.base.domain.exceptionservice.ServiceException;
-import org.web.base.domain.exceptionservice.ResultMessageEnum;
+import org.web.base.domain.exception.ServiceException;
+import org.web.base.domain.exception.ResultMessageEnum;
 
 @SuppressWarnings({"rawtypes","unchecked"})
 public class HttpServletRequestHelper {

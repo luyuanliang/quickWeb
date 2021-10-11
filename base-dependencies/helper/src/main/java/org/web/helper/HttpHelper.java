@@ -18,7 +18,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
-import org.web.base.domain.exceptionservice.ServiceException;
+import org.web.base.domain.exception.ServiceException;
 
 public class HttpHelper {
 

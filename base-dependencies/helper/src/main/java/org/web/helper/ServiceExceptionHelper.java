@@ -2,8 +2,8 @@ package org.web.helper;
 
 import org.apache.commons.lang3.StringUtils;
 import org.web.base.domain.ResultDO;
-import org.web.base.domain.exceptionservice.ServiceException;
-import org.web.base.domain.exceptionservice.ResultMessageEnum;
+import org.web.base.domain.exception.ServiceException;
+import org.web.base.domain.exception.ResultMessageEnum;
 import org.web.base.domain.view.ViewResult;
 
 /**
