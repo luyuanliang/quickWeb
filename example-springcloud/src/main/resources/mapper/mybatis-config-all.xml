@@ -7,6 +7,8 @@
 	   http://www.springframework.org/schema/beans/spring-beans-3.1.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd"
 >
     <context:property-placeholder location="classpath:application.properties"/>
+
+
     <!-- 测试环境数据库1 -->
     <!--    <bean name="dataSource"-->
     <!--          class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
