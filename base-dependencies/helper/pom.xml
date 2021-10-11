@@ -18,7 +18,7 @@
     <dependencies>
         <dependency>
             <groupId>org.web.base</groupId>
-            <artifactId>base-model</artifactId>
+            <artifactId>basedomain</artifactId>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
