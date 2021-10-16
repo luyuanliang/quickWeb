@@ -1,7 +1,7 @@
 package org.web.example.springcloud;
 
 public class TestDamnThread extends Thread {
-    public static void main(String[] args) {
+    void main(String[] args) {
         TestDamnThread t = new TestDamnThread();
         //t.setDaemon(false);
         t.start();

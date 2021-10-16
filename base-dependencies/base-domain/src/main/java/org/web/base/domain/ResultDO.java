@@ -37,6 +37,10 @@ public class ResultDO<T> implements Serializable {
     public ResultDO() {
     }
 
+    public boolean isFailed() {
+        return !isSuccess();
+    }
+
     public ResultDO(boolean success) {
         this.success = success;
         if (success) {
