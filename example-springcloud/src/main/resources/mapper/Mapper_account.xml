@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="org.web.base.example.springcloud.dao.AccountDAO">
+<mapper namespace="AccountDAO">
 
-    <resultMap id="AccountDO" type = "org.web.base.example.springcloud.domain.AccountDO">
+    <resultMap id="AccountDO" type = "AccountDO">
         <id column="account_id" property="accountId" />
 		<result column="account_name"  property="accountName"  />
 		<result column="account_no"  property="accountNo"  />
@@ -32,7 +32,7 @@
 		<if test = "accountNo != null " ><![CDATA[ AND account_no = #{accountNo}]]></if>		
     </sql>
 
-    <insert id="insertAccount" parameterType="org.web.base.example.springcloud.domain.AccountDO" useGeneratedKeys="true" keyProperty="accountId">
+    <insert id="insertAccount" parameterType="AccountDO" useGeneratedKeys="true" keyProperty="accountId">
 		INSERT INTO account (<include refid="all_columns" />) VALUES
 		(
 		#{accountId} , #{accountName} , #{accountNo}
@@ -40,7 +40,7 @@
     </insert>
 
 	
-    <select id="selectAccountList" resultMap="AccountDO" parameterType="org.web.base.example.springcloud.query.QueryAccount">
+    <select id="selectAccountList" resultMap="AccountDO" parameterType="QueryAccount">
         SELECT <include refid="all_columns" /> FROM account
 		<where>
 			  <include refid="query_condition"/>
@@ -55,7 +55,7 @@
     </select>
 
 	
-    <select id="countAccountList" resultType="int" parameterType="org.web.base.example.springcloud.query.QueryAccount">
+    <select id="countAccountList" resultType="int" parameterType="QueryAccount">
 		SELECT COUNT(1) FROM account
 		<where>
 			  <include refid="query_condition"/>
@@ -67,7 +67,7 @@
 		]]>
     </select>
 
-    <select id="selectDistinctList" resultType="String" parameterType="org.web.base.example.springcloud.query.QueryAccount">
+    <select id="selectDistinctList" resultType="String" parameterType="QueryAccount">
         SELECT DISTINCT( ${distinct} ) FROM  account <where>  <include refid="query_condition"/> 	</where>
     </select>
 
@@ -75,7 +75,7 @@
         SELECT <include refid="all_columns" /> FROM account WHERE account_id = #{accountId}
     </select>
 
-    <update id="updateAccountByAccountId" parameterType="org.web.base.example.springcloud.domain.AccountDO">
+    <update id="updateAccountByAccountId" parameterType="AccountDO">
         UPDATE account
 		<set>
 			<if test="accountName!=null"><![CDATA[account_name=#{accountName},]]></if>
