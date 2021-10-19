@@ -1,4 +1,4 @@
-package org.web.example.springcloud;
+package org.web.base.example.springcloud;
 
 import java.lang.management.ClassLoadingMXBean;
 import java.lang.management.ManagementFactory;

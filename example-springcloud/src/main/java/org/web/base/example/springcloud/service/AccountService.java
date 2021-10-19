@@ -4,7 +4,7 @@
  * @time 2020-12-22 14:41:32
  */
 
-package org.web.example.springcloud.service;
+package org.web.base.example.springcloud.service;
 
 import java.util.List;
 import java.util.Map;
@@ -13,10 +13,10 @@ import javax.annotation.Resource;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
-import org.web.base.domain.exception.ServiceException;
-import org.web.example.springcloud.query.QueryAccount;
-import org.web.example.springcloud.domain.AccountDO;
-import org.web.example.springcloud.dao.AccountDAO;
+import org.web.base.base.domain.exception.ServiceException;
+import org.web.base.example.springcloud.dao.AccountDAO;
+import org.web.base.example.springcloud.query.QueryAccount;
+import org.web.base.example.springcloud.domain.AccountDO;
 
 @Service("accountService")
 public class AccountService {

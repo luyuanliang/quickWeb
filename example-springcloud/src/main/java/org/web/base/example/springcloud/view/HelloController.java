@@ -1,4 +1,4 @@
-package org.web.example.springcloud.view;
+package org.web.base.example.springcloud.view;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

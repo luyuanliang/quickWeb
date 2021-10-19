@@ -1,10 +1,10 @@
-package org.web.example.springcloud.dao;
+package org.web.base.example.springcloud.dao;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.web.example.springcloud.query.QueryAccount;
-import org.web.example.springcloud.domain.AccountDO;
+import org.web.base.example.springcloud.query.QueryAccount;
+import org.web.base.example.springcloud.domain.AccountDO;
 
 @Mapper
 public interface AccountDAO {

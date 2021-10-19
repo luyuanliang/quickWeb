@@ -1,4 +1,4 @@
-package org.web.example.springcloud;
+package org.web.base.example.springcloud;
 
 public class TestDamnThread extends Thread {
     void main(String[] args) {

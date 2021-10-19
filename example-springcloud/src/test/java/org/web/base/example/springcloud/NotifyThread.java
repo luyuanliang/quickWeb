@@ -1,4 +1,4 @@
-package org.web.example.springcloud;
+package org.web.base.example.springcloud;
 
 public class NotifyThread extends Thread {
 

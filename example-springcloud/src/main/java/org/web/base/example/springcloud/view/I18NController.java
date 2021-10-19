@@ -1,4 +1,4 @@
-package org.web.example.springcloud.view;
+package org.web.base.example.springcloud.view;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;

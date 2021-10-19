@@ -1,4 +1,4 @@
-package org.web.example.springcloud;
+package org.web.base.example.springcloud;
 
 public class A {
     private static final int flag=1;

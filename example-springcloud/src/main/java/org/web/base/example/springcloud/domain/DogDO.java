@@ -1,4 +1,4 @@
-package org.web.example.springcloud.domain;
+package org.web.base.example.springcloud.domain;
 
 import lombok.Getter;
 import lombok.Setter;

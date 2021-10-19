@@ -1,6 +1,4 @@
-package org.web.example.springcloud;
-
-import java.util.concurrent.locks.Lock;
+package org.web.base.example.springcloud;
 
 public class NotifyTest {
 

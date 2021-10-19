@@ -1,10 +1,10 @@
-package org.web.example.springcloud.view;
+package org.web.base.example.springcloud.view;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.web.example.springcloud.domain.StudentDO;
+import org.web.base.example.springcloud.domain.StudentDO;
 
 @Controller
 @RequestMapping("freemarker")

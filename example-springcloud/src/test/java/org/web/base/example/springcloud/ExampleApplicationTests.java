@@ -1,4 +1,4 @@
-package org.web.example.springcloud;
+package org.web.base.example.springcloud;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

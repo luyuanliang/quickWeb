@@ -1,4 +1,4 @@
-package org.web.example.springcloud.view;
+package org.web.base.example.springcloud.view;
 
 
 import com.google.gson.Gson;
@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.RequestContextHolder;
-import org.web.base.domain.view.ViewResult;
-import org.web.example.springcloud.domain.AccountDO;
-import org.web.example.springcloud.query.QueryAccount;
-import org.web.example.springcloud.service.AccountService;
+import org.web.base.base.domain.view.ViewResult;
+import org.web.base.example.springcloud.domain.AccountDO;
+import org.web.base.example.springcloud.query.QueryAccount;
+import org.web.base.example.springcloud.service.AccountService;
 
 import javax.annotation.Resource;
 
