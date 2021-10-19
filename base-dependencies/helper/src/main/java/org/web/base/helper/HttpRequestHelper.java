@@ -1,4 +1,4 @@
-package org.web.helper;
+package org.web.base.helper;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

@@ -1,4 +1,4 @@
-package org.web.helper;
+package org.web.base.helper;
 
 import org.apache.commons.lang3.StringUtils;
 import org.web.base.domain.ResultDO;

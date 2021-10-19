@@ -1,4 +1,4 @@
-package org.web.helper;
+package org.web.base.helper;
 
 import java.util.Locale;
 import java.util.MissingResourceException;

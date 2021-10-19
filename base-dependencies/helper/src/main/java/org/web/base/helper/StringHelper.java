@@ -1,4 +1,4 @@
-package org.web.helper;
+package org.web.base.helper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +12,7 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * Created by luyl on 17-12-1.
  */
+@SuppressWarnings("ALL")
 public class StringHelper {
 
 	// 大小写均可匹配
@@ -30,15 +31,14 @@ public class StringHelper {
 			list = new ArrayList<>();
 			String[] array = str.split(seperate);
 			for (int i = 0; i < array.length; i++) {
-				if (StringUtils.isNotBlank(array[i]) && StringUtils.isNotBlank(array[i].trim())) {
-					if ("java.lang.Long".equals(clazz.getClass().toString())) {
+				if (StringUtils.isNotBlank(array[i]) && StringUtils.isNotBlank(array[i].trim()))
+					if (clazz.getClass().toString().equals("java.lang.Long")) {
 						list.add(Long.valueOf(array[i].trim()));
-					} else if ("java.lang.Integer".equals(clazz.getClass().toString())) {
+					} else if (clazz.getClass().toString().equals("java.lang.Integer")) {
 						list.add(Integer.valueOf(array[i].trim()));
 					} else {
 						list.add(array[i].trim());
 					}
-				}
 			}
 		}
 		if (list == null || list.size() == 0) {
@@ -51,7 +51,7 @@ public class StringHelper {
 	 * 转换xss特殊字符
 	 * 
 	 * @param value
-	 * @return
+	 * @return xxsEncode string.
 	 */
 	public static String xssEncode(String value) {
 		if (value == null)
@@ -71,8 +71,8 @@ public class StringHelper {
 	/**
 	 * 转换xss特殊字符
 	 * 
-	 * @param value
-	 * @return
+	 * @param value input value.
+	 * @return xssEncode value.
 	 */
 	public static String lessXssEncode(String value) {
 		if (value == null)
@@ -91,8 +91,7 @@ public class StringHelper {
 
 	private static String replaceAll(String input, Pattern p, String replacement) {
 		Matcher m = p.matcher(input);
-		String result = m.replaceAll(replacement);
-		return result;
+		return m.replaceAll(replacement);
 	}
 
 	public static boolean isEmpty(Object obj) {

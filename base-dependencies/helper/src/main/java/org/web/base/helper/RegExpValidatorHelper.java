@@ -1,4 +1,4 @@
-package org.web.helper;
+package org.web.base.helper;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

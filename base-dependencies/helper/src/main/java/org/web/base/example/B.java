@@ -1,4 +1,4 @@
-package org.web.example;
+package org.web.base.example;
 
 public class B {
 

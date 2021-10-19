@@ -1,4 +1,4 @@
-package org.web.helper;
+package org.web.base.helper;
 
 import java.util.zip.*;
 import java.io.*;
@@ -15,8 +15,7 @@ public class ZipHelper {
 
 		BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(desFile));
 		ZipOutputStream zos = new ZipOutputStream(bos);
-		String entryName = null;
-		entryName = fileNames[0];
+		String entryName = fileNames[0];
 
 		for (int i = 0; i < fileNames.length; i++) {
 			entryName = fileNames[i];
@@ -44,8 +43,7 @@ public class ZipHelper {
 	// 解析文件名
 	private static String parse(String srcFile) {
 		int location = srcFile.lastIndexOf("/");
-		String fileName = srcFile.substring(location + 1);
-		return fileName;
+		return srcFile.substring(location + 1);
 	}
 
 	public static void main(String[] args) throws IOException {

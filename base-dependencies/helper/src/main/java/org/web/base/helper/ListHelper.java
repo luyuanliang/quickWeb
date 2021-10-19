@@ -1,4 +1,4 @@
-package org.web.helper;
+package org.web.base.helper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,14 +16,14 @@ public class ListHelper {
             list = new ArrayList();
             String[] array = str.split(seperate);
 
-            for (int i = 0; i < array.length; ++i) {
-                if (StringUtils.isNotBlank(array[i]) && StringUtils.isNotBlank(array[i].trim())) {
-                    if ("java.lang.Long".equals(clazz.getClass())) {
-                        list.add(Long.valueOf(array[i].trim()));
-                    } else if ("java.lang.Integer".equals(clazz.getClass())) {
-                        list.add(Integer.valueOf(array[i].trim()));
+            for (String s : array) {
+                if (StringUtils.isNotBlank(s) && StringUtils.isNotBlank(s.trim())) {
+                    if ("java.lang.Long".equals(clazz.toString())) {
+                        list.add(Long.valueOf(s.trim()));
+                    } else if ("java.lang.Integer".equals(clazz.toString())) {
+                        list.add(Integer.valueOf(s.trim()));
                     } else {
-                        list.add(array[i].trim());
+                        list.add(s.trim());
                     }
                 }
             }

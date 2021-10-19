@@ -1,4 +1,4 @@
-package org.web.helper;
+package org.web.base.helper;
 
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -6,6 +6,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import lombok.val;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
@@ -47,7 +48,7 @@ public class HttpServletRequestHelper {
 			Enumeration<String> e = request.getParameterNames();
 			Map<String, Object> map = new HashMap<>();
 			while (e.hasMoreElements()) {
-				String name = e.nextElement().toString();
+				final String name = e.nextElement().toString();
 				String value = request.getParameter(name);
 				logger.info(name + "=" + request.getParameter(name));
 				if (name.startsWith(DATA_FORMAT_)) {

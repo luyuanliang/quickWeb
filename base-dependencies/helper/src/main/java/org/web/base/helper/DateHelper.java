@@ -1,4 +1,4 @@
-/**  
+/***
  * @Title: DateUtils.java
  * @Package tf56.skynet.utils
  * @Description: TODO(用一句话描述该文件做什么)
@@ -6,7 +6,7 @@
  * @date 2016年12月15日 上午10:48:38
  * @version V1.0  
  */
-package org.web.helper;
+package org.web.base.helper;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -16,8 +16,7 @@ import java.util.Date;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * @ClassName: DateUtils
- * @Description: 日期工具类
+ * 日期工具类
  * @author c.zhang
  * @date 2016年12月15日 上午10:48:38
  */
@@ -25,24 +24,24 @@ public class DateHelper {
 
 	public static SimpleDateFormat df;
 
-	public static final String FORMAT_YYYY_MM_DD_HH_MM_SS = "yyyy-MM-dd HH:mm:ss";
+	public static String FORMAT_YYYY_MM_DD_HH_MM_SS = "yyyy-MM-dd HH:mm:ss";
 
-	public static final String FORMAT_YYYY_MM_DD_HH_MM = "yyyy-MM-dd HH:mm:00";
+	public static String FORMAT_YYYY_MM_DD_HH_MM = "yyyy-MM-dd HH:mm:00";
 
-	public static final String FORMAT_YYYY_MM_DD = "yyyy-MM-dd";
+	public static String FORMAT_YYYY_MM_DD = "yyyy-MM-dd";
 
-	public static final String FORMAT_YYYY_MM = "yyyy-MM";
+	public static String FORMAT_YYYY_MM = "yyyy-MM";
 
-	public static final String FORMAT_YYYYMMDDHHMMSS = "yyyyMMddHHmmss";
+	public static String FORMAT_YYYYMMDDHHMMSS = "yyyyMMddHHmmss";
 
-	public static final String FORMAT_YYYYMMDDHH = "yyyyMMddHH";
-	public static final String FORMAT_YYYYMMDD = "yyyyMMdd";
+	public static String FORMAT_YYYYMMDDHH = "yyyyMMddHH";
+	public static String FORMAT_YYYYMMDD = "yyyyMMdd";
 
 	/**
 	 * 根据日期字符串判断当月第几周
 	 * 
-	 * @param str
-	 * @return
+	 * @param str 入参
+	 * @return 返回第几周
 	 * @throws Exception
 	 */
 	public static int getWeek(String str) throws Exception {
@@ -60,13 +59,13 @@ public class DateHelper {
 	/**
 	 * 返回某日期 之前或之后的 日期
 	 */
-	public static final Date getDaysByCount(Date requestDate, int dayCount) {
+	public static Date getDaysByCount(Date requestDate, int dayCount) {
 		return getDaysByCount(requestDate, dayCount, FORMAT_YYYY_MM_DD_HH_MM_SS);
 	}
 	/**
 	 * 返回某日期 之前或之后的 日期 
 	 */
-	public static final Date getDaysByCount(Date requestDate, int dayCount, String dataFormat) {
+	public static Date getDaysByCount(Date requestDate, int dayCount, String dataFormat) {
 		df = new SimpleDateFormat(dataFormat);
 		df.format(requestDate);
 		Calendar cal = Calendar.getInstance();
@@ -95,25 +94,25 @@ public class DateHelper {
 		}
 	}
 
-	public static final String getStrByDate(Date date) {
+	public static String getStrByDate(Date date) {
 		return getStrByDate(date, FORMAT_YYYY_MM_DD_HH_MM_SS);
 	}
 
-	public static final String getStrByDate(Date date, String format) {
+	public static String getStrByDate(Date date, String format) {
 		df = new SimpleDateFormat(format);
 		return df.format(date);
 	}
 
-	public static final String getStrByDate(String date, String beforeFormat, String format) throws ParseException {
+	public static String getStrByDate(String date, String beforeFormat, String format) throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat(beforeFormat);
 		return getStrByDate(sdf.parse(date), format);
 	}
 
-	public static final Date fromStrGetDate(String dateStr) throws Exception {
+	public static Date fromStrGetDate(String dateStr) throws Exception {
 		return fromStrGetDate(dateStr, FORMAT_YYYY_MM_DD_HH_MM_SS);
 	}
 
-	public static final Date fromStrGetDate(String dateStr, String dateFormate) throws ParseException {
+	public static Date fromStrGetDate(String dateStr, String dateFormate) throws ParseException {
 		df = new SimpleDateFormat(dateFormate);
 		return df.parse(dateStr);
 	}
@@ -234,7 +233,7 @@ public class DateHelper {
 			return null;
 		}
 	}
-	public static final String getDateStr(Date date) {
+	public static String getDateStr(Date date) {
 		df = new SimpleDateFormat(FORMAT_YYYY_MM_DD_HH_MM_SS);
 		return df.format(date);
 	}

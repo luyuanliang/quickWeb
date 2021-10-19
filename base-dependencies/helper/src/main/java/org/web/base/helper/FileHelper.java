@@ -1,4 +1,4 @@
-package org.web.helper;
+package org.web.base.helper;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -37,29 +37,29 @@ public class FileHelper {
 	}
 
 	public static List<String> getAllFile(String folderName) {
-		List<String> directoryList = new ArrayList<String>();
-		List<String> fileList = new ArrayList<String>();
+		List<String> directoryList = new ArrayList<>();
+		List<String> fileList = new ArrayList<>();
 		executeFile(directoryList, fileList, folderName, false);
 		return fileList;
 	}
 
 	public static List<String> getAllFolder(String folderName) {
-		List<String> directoryList = new ArrayList<String>();
-		List<String> fileList = new ArrayList<String>();
+		List<String> directoryList = new ArrayList<>();
+		List<String> fileList = new ArrayList<>();
 		executeFile(directoryList, fileList, folderName, false);
 		return directoryList;
 	}
 
 	public static List<String> getCurrentFile(String folderName) {
-		List<String> directoryList = new ArrayList<String>();
-		List<String> fileList = new ArrayList<String>();
+		List<String> directoryList = new ArrayList<>();
+		List<String> fileList = new ArrayList<>();
 		executeFile(directoryList, fileList, folderName, true);
 		return fileList;
 	}
 
 	public static List<String> getCurrentFolder(String folderName) {
-		List<String> directoryList = new ArrayList<String>();
-		List<String> fileList = new ArrayList<String>();
+		List<String> directoryList = new ArrayList<>();
+		List<String> fileList = new ArrayList<>();
 		executeFile(directoryList, fileList, folderName, true);
 		return directoryList;
 	}

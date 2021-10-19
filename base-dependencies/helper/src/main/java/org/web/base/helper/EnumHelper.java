@@ -1,8 +1,8 @@
-package org.web.helper;
+package org.web.base.helper;
 
 public class EnumHelper {
 
-	public static enum BOOLEAN {
+	public enum BOOLEAN {
 		Y, N
 	}
 
@@ -12,8 +12,8 @@ public class EnumHelper {
 	
 	public static boolean checkExist(Class<?> e, String arg) {
 		Object[] array = e.getEnumConstants();
-		for (int i = 0; i < array.length; i++) {
-			if (array[i].toString().equalsIgnoreCase(arg)) {
+		for (Object o : array) {
+			if (o.toString().equalsIgnoreCase(arg)) {
 				return true;
 			}
 		}

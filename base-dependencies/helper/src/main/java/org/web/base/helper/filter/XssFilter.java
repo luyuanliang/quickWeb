@@ -1,4 +1,4 @@
-package org.web.helper.filter;
+package org.web.base.helper.filter;
 
 import java.io.IOException;
 
@@ -11,13 +11,10 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
 
-import org.web.helper.StringHelper;
+import org.web.base.helper.StringHelper;
 
 public class XssFilter implements Filter {
 
-	@Override
-	public void init(FilterConfig filterConfig) throws ServletException {
-	}
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
@@ -54,18 +51,4 @@ class XssHttpServletRequestWrapper extends HttpServletRequestWrapper {
 		return value;
 	}
 
-	/**
-	 * 覆盖getHeader方法，将参数名和参数值都做xss过滤。<br/>
-	 * 如果需要获得原始的值，则通过super.getHeaders(name)来获取<br/>
-	 * getHeaderNames 也可能需要覆盖
-	 */
-	// @Override
-	// public String getHeader(String name) {
-	//
-	// String value = super.getHeader(name);
-	// if (value != null) {
-	// value = StringUtil.xssEncode(value);
-	// }
-	// return value;
-	// }
 }
