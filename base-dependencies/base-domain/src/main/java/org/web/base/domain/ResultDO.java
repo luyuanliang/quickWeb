@@ -2,6 +2,7 @@ package org.web.base.domain;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.commons.lang3.ObjectUtils;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -69,20 +70,7 @@ public class ResultDO<T> implements Serializable {
         if (!this.success) {
             return true;
         }
-        Object obj = getDomain();
-        if (obj != null) {
-            if (obj instanceof List) {
-                List list = (List) obj;
-                return list.size() == 0;
-            } else if (obj instanceof Set) {
-                Set set = (Set) obj;
-                return set.size() == 0;
-            } else if (obj instanceof Map) {
-                Map map = (Map) obj;
-                return map.size() == 0;
-            }
-        }
-        return false;
+        return ObjectUtils.isEmpty(this);
     }
 
     public boolean isNotEmpty() {
@@ -91,7 +79,7 @@ public class ResultDO<T> implements Serializable {
 
     public void setDomain(T domain) {
         this.domain = domain;
-        if ((!(domain instanceof List)) && (!(domain instanceof Set)) && (!(domain instanceof Map))) {
+        if ((!(domain instanceof CharSequence)) && (!(domain instanceof List)) && (!(domain instanceof Set)) && (!(domain instanceof Map))) {
             setTotalCount(1L);
         }
     }
