@@ -1,10 +1,11 @@
-package org.web.base.helper;
+package org.web.base.domain.helper;
 
 import org.apache.commons.lang3.StringUtils;
-import org.web.base.domain.ResultDO;
 import org.web.base.domain.exception.ServiceException;
 import org.web.base.domain.exception.ResultMessageEnum;
-import org.web.base.domain.view.ViewResult;
+import org.web.base.domain.view.ViewResultDO;
+
+import java.util.Map;
 
 /**
  * 类ServiceExceptionHelper.java的实现描述：
@@ -14,8 +15,8 @@ import org.web.base.domain.view.ViewResult;
 @SuppressWarnings("rawtypes")
 public class ServiceExceptionHelper {
 
-	public static ServiceException buildServiceException(ResultMessageEnum resultMessageEnum, String message, String params) {
-		return new ServiceException(resultMessageEnum.getCode(), resultMessageEnum.getMessage(), message, params);
+	public static ServiceException buildServiceException(ResultMessageEnum resultMessageEnum, String message, Map params) {
+		return new ServiceException(resultMessageEnum.getCode(), resultMessageEnum.getMessage(),  params);
 	}
 
 	public static ServiceException buildServiceException(ResultMessageEnum resultMessageEnum, String message) {
@@ -26,24 +27,24 @@ public class ServiceExceptionHelper {
 		return buildServiceException(resultMessageEnum, null, null);
 	}
 
-	public static ViewResult buildViewResultByServiceException(Exception e) {
+	public static ViewResultDO buildViewResultByServiceException(Exception e, String message) {
 		if (e instanceof ServiceException) {
-			return buildViewResultByServiceException((ServiceException) e, null);
+			return buildViewResultByServiceException((ServiceException) e, message);
 		}
-		return buildViewResultByServiceException(buildServiceException(ResultMessageEnum.SYSTEM_ERROR), null);
+		return buildViewResultByServiceException(buildServiceException(ResultMessageEnum.SYSTEM_ERROR), message);
 	}
 
-	public static ViewResult buildViewResultByServiceException(ServiceException e) {
+	public static ViewResultDO buildViewResultByServiceException(ServiceException e) {
 		return buildViewResultByServiceException(e, null);
 	}
 
-	public static ViewResult buildViewResultByServiceException(ServiceException e, String msg) {
+	public static ViewResultDO buildViewResultByServiceException(ServiceException e, String msg) {
 		return buildViewResultByServiceException(e, msg, StringUtils.isEmpty(msg) ? msg : e.getMessage());
 	}
 
-	public static ViewResult buildViewResultByServiceException(ServiceException e, String msg, String title) {
-		ViewResult view = new ViewResult();
-		view.setType(ViewResult.ViewType.error.name());
+	public static ViewResultDO buildViewResultByServiceException(ServiceException e, String msg, String title) {
+		ViewResultDO view = new ViewResultDO();
+		view.setType(ViewResultDO.ViewType.error.name());
 		view.setResult(false);
 		if (StringUtils.isNotBlank(title)) {
 			view.setTitle(title);
@@ -61,26 +62,7 @@ public class ServiceExceptionHelper {
 		return view;
 	}
 
-	public static ResultDO buildResultDOByServiceException(ServiceException e) {
-		return buildResultDOByServiceException(e, null);
-	}
 
-	public static ResultDO buildResultDOByServiceException(ServiceException e, String message) {
-		ResultDO resultDO = new ResultDO(false);
-		resultDO.setCode(e.getErrorCode());
-		resultDO.setDescription(e.getDescription());
-		if (StringUtils.isNotEmpty(e.getDescription())) {
-			e.setDescription(e.getDescription() + " and parameter is " + e.getParams());
-		}
-		if (StringUtils.isNotBlank(message)) {
-			resultDO.setMessage(message);
-		} else if (StringUtils.isNotEmpty(e.getMessage())) {
-			resultDO.setMessage(e.getMessage());
-		} else {
-			resultDO.setMessage(e.getDescription());
-		}
-		return resultDO;
-	}
 
 	public static String getExceptionInfo(Exception e) {
 		StringBuilder buffer = new StringBuilder();

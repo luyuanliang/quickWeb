@@ -18,6 +18,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.web.base.domain.exception.ResultMessageEnum;
 import org.web.base.domain.exception.ServiceException;
+import org.web.base.domain.helper.ServiceExceptionHelper;
 
 /**
  * Created by luyl on 17-9-14.

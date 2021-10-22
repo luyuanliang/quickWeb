@@ -10,16 +10,16 @@ import java.util.List;
  * */
 @Setter
 @Getter
-public class ViewResult<T> {
+public class ViewResultDO<T> {
 
-    public ViewResult(boolean result) {
+    public ViewResultDO(boolean result) {
         this.result = result;
         if (result) {
             setMsg("操作成功！");
         }
     }
 
-    public ViewResult() {
+    public ViewResultDO() {
     }
 
     private boolean result;

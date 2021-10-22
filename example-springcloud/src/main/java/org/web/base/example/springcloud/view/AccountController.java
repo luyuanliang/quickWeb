@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.RequestContextHolder;
-import org.web.base.base.domain.view.ViewResult;
+import org.web.base.domain.view.ViewResultDO;
 import org.web.base.example.springcloud.domain.AccountDO;
 import org.web.base.example.springcloud.query.QueryAccount;
 import org.web.base.example.springcloud.service.AccountService;
@@ -24,8 +24,7 @@ public class AccountController {
     @RequestMapping(value = "insertAccount", method = {RequestMethod.POST, RequestMethod.GET})
     @ResponseBody
     public String insertAccount(AccountDO accountDO) {
-        ViewResult<AccountDO> resultDO = new ViewResult<>();
-
+        ViewResultDO<AccountDO> resultDO = new ViewResultDO<>();
         return new Gson().toJson(resultDO);
     }
 
@@ -33,7 +32,7 @@ public class AccountController {
     @ResponseBody
     public String selectAccountByAccountId(QueryAccount queryAccount) {
         RequestContextHolder.getRequestAttributes();
-        ViewResult<AccountDO> resultDO = new ViewResult<>(true);
+        ViewResultDO<AccountDO> resultDO = new ViewResultDO<>(true);
         AccountDO accountDO = accountService.selectAccountByAccountId(queryAccount.getAccountId());
         resultDO.setData(accountDO);
         return new Gson().toJson(resultDO);

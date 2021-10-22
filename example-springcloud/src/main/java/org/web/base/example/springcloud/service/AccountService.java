@@ -13,7 +13,7 @@ import javax.annotation.Resource;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
-import org.web.base.base.domain.exception.ServiceException;
+import org.web.base.domain.exception.ServiceException;
 import org.web.base.example.springcloud.dao.AccountDAO;
 import org.web.base.example.springcloud.query.QueryAccount;
 import org.web.base.example.springcloud.domain.AccountDO;

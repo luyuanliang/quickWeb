@@ -22,17 +22,15 @@ public class ResultDO<T> implements Serializable {
     // 终端用户的提示信息，不推荐使用
     private String message;
 
-    // 结果描述，用于排查问题. @see ServiceException#description属性
-    private String description;
     // code. @see ServiceException#code属性
     private String code;
 
     private boolean success = true; // 执行是否成功
     // 用于描述返回记录总数，如果返回单条记录，例如返回的module类型是一个对象，而非集合的场合，会自动设置1，详情见setModule方法。
     private long totalCount = 0;
-    private T module; // 实际的返回结果
+    private T domain; // 实际的返回结果
     // 某些情况下，特殊 格外的参数返回
-    private Map<String, Object> extendsModule = null;
+    private Map<String, Object> extendsDomain = null;
 
     public ResultDO() {
     }
@@ -48,22 +46,22 @@ public class ResultDO<T> implements Serializable {
         }
     }
 
-    public ResultDO(boolean success, String code, String message, String description) {
+    public ResultDO(boolean success, String code, String message) {
         this.success = success;
         this.code = code;
         this.message = message;
-        this.description = description;
     }
 
-    public void setModel(String key, Object model) {
-        getExtendsModule().put(key, model);
+    public void addExtendsDomain(String key, Object model) {
+        getExtendsDomain().put(key, model);
     }
 
-    public Map<String, Object> getExtendsModule() {
-        if (extendsModule == null) {
-            extendsModule = new HashMap<>();
+
+    public Map<String, Object> getExtendsDomain() {
+        if (extendsDomain == null) {
+            extendsDomain = new HashMap<>();
         }
-        return extendsModule;
+        return extendsDomain;
     }
 
     @SuppressWarnings("rawtypes")
@@ -71,7 +69,7 @@ public class ResultDO<T> implements Serializable {
         if (!this.success) {
             return true;
         }
-        Object obj = getModule();
+        Object obj = getDomain();
         if (obj != null) {
             if (obj instanceof List) {
                 List list = (List) obj;
@@ -91,9 +89,9 @@ public class ResultDO<T> implements Serializable {
         return !isEmpty();
     }
 
-    public void setModule(T module) {
-        this.module = module;
-        if ((!(module instanceof List)) && (!(module instanceof Set)) && (!(module instanceof Map))) {
+    public void setDomain(T domain) {
+        this.domain = domain;
+        if ((!(domain instanceof List)) && (!(domain instanceof Set)) && (!(domain instanceof Map))) {
             setTotalCount(1L);
         }
     }
