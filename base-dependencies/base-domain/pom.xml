@@ -9,6 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>basedomain</artifactId>
+    <packaging>jar</packaging>
     <name>base-domain</name>
     <description>Demo project for Spring Boot</description>
 
