@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.web.base.domain.view.ViewResultDO;
 import org.web.base.example.springcloud.domain.AccountDO;
@@ -31,7 +32,7 @@ public class AccountController {
     @RequestMapping(value = "selectAccountByAccountId", method = {RequestMethod.POST, RequestMethod.GET})
     @ResponseBody
     public String selectAccountByAccountId(QueryAccount queryAccount) {
-        RequestContextHolder.getRequestAttributes();
+        RequestAttributes attributes = RequestContextHolder.getRequestAttributes();
         ViewResultDO<AccountDO> resultDO = new ViewResultDO<>(true);
         AccountDO accountDO = accountService.selectAccountByAccountId(queryAccount.getAccountId());
         resultDO.setData(accountDO);
