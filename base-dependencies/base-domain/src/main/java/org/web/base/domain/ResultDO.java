@@ -3,6 +3,8 @@ package org.web.base.domain;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.commons.lang3.ObjectUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.web.base.domain.exception.ResultMessageEnum;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -81,6 +83,10 @@ public class ResultDO<T> implements Serializable {
         this.domain = domain;
         if ((!(domain instanceof CharSequence)) && (!(domain instanceof List)) && (!(domain instanceof Set)) && (!(domain instanceof Map))) {
             setTotalCount(1L);
+        }
+        if (StringUtils.isEmpty(code)) {
+            setCode(ResultMessageEnum.SUCCESS.getCode());
+            setMessage(ResultMessageEnum.SUCCESS.getMessage());
         }
     }
 
